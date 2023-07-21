@@ -34,10 +34,25 @@ app.listen(4000, () => {
 
 app.post('/register', async (req, res) => {
     const { name, email, password } = req.body;
-   const userDoc = await User.create({
-        name,
-        email,
-        password:bcrypt.hashSync(password, bcryptSalt),
+    try {
+        // Check if the user with the given email already exists
+        const existingUser = await User.findOne({ email });
+    
+        if (existingUser) {
+          // User with the same email already exists
+          return res.status(400).json({ error: 'Email already registered' });
+        }
+    
+        // Create a new user and save it to the database
+        const userDoc = await User.create({
+          name,
+          email,
+          password: bcrypt.hashSync(password, bcryptSalt),
+        });
+    
+        return res.status(200).json({ message: 'User registered successfully', user: userDoc });
+      } catch (error) {
+        console.error('Error registering user:', error);
+        return res.status(500).json({ error: 'Internal Server Error' });
+      }
     });
-    res.json({userDoc});
-});
