@@ -1,2 +1,2 @@
 # hotelstay
-a airbnb clone with natural dark theme and main color green, my first fullstack project
+a airbnb variant to practice the MERN stack, it is my first fullstack App 
