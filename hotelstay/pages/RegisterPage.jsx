@@ -6,18 +6,29 @@ export default function RegisterPage() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+
     const registerUser = async (ev) => {
         ev.preventDefault();
-    
+
         try {
-          const response = await axios.get('http://localhost:4000/test');
-          // Handle the successful response here
-          console.log(response.data);
+            const response = await axios.post('/register', {
+                name,
+                email,
+                password,
+            });
+            console.log('User registration successful:', response.data);
+            alert('Registration successful. Now you can log in')
+
         } catch (error) {
-          // Handle errors here
-          console.error('An error occurred:', error);
+            if (error.response && error.response.data) {
+                console.error('An error occurred:', error.response.data.error);
+            } else {
+                console.error('An error occurred:', error.message);
+            }
         }
-      };
+    }
+
     return (
         <div style={containerStyle}>
             <div className="">
