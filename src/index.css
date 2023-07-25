@@ -6,6 +6,12 @@ input[type="text"],
 input[type="password"],
 input[type="email"] {
   @apply w-full border my-2 py-2 px-3 rounded-2xl;
+  @apply w-full my-2 py-2 px-3 rounded-2xl;
+  background-color: rgb(59,59,59);
+}
+
+input:focus {
+  @apply border;
 }
 
 button {
@@ -31,11 +37,32 @@ body {
 }
 
 nav {
+@media (max-width: 605px) {
+  .mainHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @apply gap-4;
+    @apply mb-10;
+    @apply mt-10;
+  }
+}
+
+.accountNavBar {
   @apply w-full;
   @apply flex;
   @apply justify-center;
   @apply mt-8;
   @apply gap-2;
+  @apply gap-4;
+}
+
+@media (max-width: 807px) {
+  .accountNavBar {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2.5rem;
+  }
 }
 
 .accountPageLinks {
@@ -69,6 +96,7 @@ nav {
   width: 100%;
   height: 100%;
   background: #68d391;
+  background: rgb(33, 149, 112);
   border-radius: 50% 50% 0 0;
   transform: translateY(100%) scaleY(.5);
   transition: all .6s ease;
@@ -113,6 +141,7 @@ nav {
 }
 .accountPageLinks:hover {
   background: #68d391;
+  background: rgb(33, 149, 112);
   transition: background .2s linear;
   transition-delay: .6s;
 }
@@ -131,4 +160,112 @@ nav {
 }
 .accountPageLinks:hover span:last-child {
   transform: translateY(-24px);
+}
+
+.loggedInDiv {
+  @apply text-center;
+   @apply max-w-lg;
+   @apply mx-auto;
+   @apply mt-20;
+}
+
+.logoutBtn {
+  @apply bg-softpink;
+  @apply max-w-sm;
+  @apply mt-6;
+  @apply min-w-[25%];
+  @apply rounded-full;
+}
+
+.newPlaceBtn {
+  @apply bg-primary;
+  @apply py-2;
+  @apply px-6;
+  @apply rounded-full;
+  @apply inline-flex; 
+  @apply gap-1;
+}
+
+.divNewPlaceBtn {
+  @apply text-center;
+  @apply mt-16;
+  
+}
+
+.newPlaceFormHeader {
+  margin-top: 4px;
+  @apply text-2xl;
+  
+}
+
+.newPlaceFormText {
+  @apply text-green-400;
+}
+
+.newPlaceFormInput {
+  background-color: rgb(59,59,59);
+  color: white;
+}
+
+.newPlaceFormBtn {
+@apply border;
+@apply bg-transparent;
+@apply rounded-2xl;
+@apply p-5;
+@apply text-2xl;
+display: inline-flex;
+@apply justify-center;
+@apply gap-2;
+
+}
+
+.newPlaceFormGrid {
+  @apply mt-2;
+  display: grid;
+  @apply grid-cols-3;
+  @apply md:grid-cols-4;
+  @apply lg:grid-cols-6;
+}
+
+.newPlaceFormAddLink {
+  display: flex;
+}
+
+.newPlaceFormBtnLink {
+  @apply bg-softgreen;
+ @apply px-4;
+ @apply rounded-2xl;
+}
+
+.newPlaceFormPerks {
+  display: grid;
+  @apply grid-cols-2;
+  @apply md:grid-cols-3;
+  @apply lg:grid-cols-6;
+  @apply gap-2;
+}
+
+.newPlaceFormLabelPerks {
+  @apply border;
+  @apply py-1;
+  @apply px-4;
+  @apply rounded-2xl;
+  display: flex;
+  @apply gap-2;
+  @apply items-center;
+  @apply cursor-pointer;
+}
+
+textarea {
+  width: 100%;
+  color: white;
+ @apply rounded-xl;
+ min-height: 120px;
+ background-color: rgb(54, 59, 61);
+ padding: 3px;
+}
+
+body {
+  max-width: 1440px;
+  margin: auto;
 }
