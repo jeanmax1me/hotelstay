@@ -1,0 +1,266 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  @apply w-full my-2 py-2 px-3 rounded-2xl;
+  background-color: rgb(59,59,59);
+}
+
+input:focus {
+  @apply border;
+}
+
+button {
+  @apply bg-green-400;
+}
+
+button.primary {
+  @apply bg-primary p-2 w-full text-white rounded-2xl;
+}
+
+@layer base {
+  h1 {
+    @apply text-4xl;
+    @apply text-center;
+    @apply mb-4;
+    @apply text-white
+  }
+}
+
+body {
+  background-color: #252728;
+  color: white;
+}
+
+@media (max-width: 605px) {
+  .mainHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @apply gap-4;
+    @apply mb-10;
+    @apply mt-10;
+  }
+}
+
+.accountNavBar {
+  @apply w-full;
+  @apply flex;
+  @apply justify-center;
+  @apply mt-8;
+  @apply gap-4;
+}
+
+@media (max-width: 807px) {
+  .accountNavBar {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.accountPageLinks {
+  @apply bg-green-700;
+  @apply rounded-full;
+  @apply py-2;
+  @apply px-6;
+
+}
+
+.accountPageLinks {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  max-width: 260px;
+  height: 52px;
+  background: #fff;
+  transform: translate3d(0px, 0%, 0px);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: .05em;
+  transition-delay: .6s;
+  overflow: hidden;
+}
+.accountPageLinks:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(33, 149, 112);
+  border-radius: 50% 50% 0 0;
+  transform: translateY(100%) scaleY(.5);
+  transition: all .6s ease;
+}
+.accountPageLinks:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 0;
+  transform: translateY(0) scaleY(1);
+  transition: all .6s ease;
+}
+.accountPageLinks div {
+  position: relative;
+  top: 7px;
+  width: 100%;
+  height: 26px;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+.accountPageLinks span {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  transition: transform .5s ease;
+}
+.accountPageLinks span:first-child {
+  color: white;
+  transform: translateY(24px);
+  font-size: 1rem;
+}
+.accountPageLinks span:last-child {
+  color: #1E0F21;
+  transform: translateY(0);
+  font-size: 1rem;
+}
+.accountPageLinks:hover {
+  background: rgb(33, 149, 112);
+  transition: background .2s linear;
+  transition-delay: .6s;
+}
+.accountPageLinks:hover:after {
+  border-radius: 0 0 50% 50%;
+  transform: translateY(-100%) scaleY(.5);
+  transition-delay: 0;
+}
+.accountPageLinks:hover:before {
+  border-radius: 0;
+  transform: translateY(0) scaleY(1);
+  transition-delay: 0;
+}
+.accountPageLinks:hover span:first-child {
+  transform: translateY(0);
+}
+.accountPageLinks:hover span:last-child {
+  transform: translateY(-24px);
+}
+
+.loggedInDiv {
+  @apply text-center;
+   @apply max-w-lg;
+   @apply mx-auto;
+   @apply mt-20;
+}
+
+.logoutBtn {
+  @apply bg-softpink;
+  @apply max-w-sm;
+  @apply mt-6;
+  @apply min-w-[25%];
+  @apply rounded-full;
+}
+
+.newPlaceBtn {
+  @apply bg-primary;
+  @apply py-2;
+  @apply px-6;
+  @apply rounded-full;
+  @apply inline-flex; 
+  @apply gap-1;
+}
+
+.divNewPlaceBtn {
+  @apply text-center;
+  @apply mt-16;
+  
+}
+
+.newPlaceFormHeader {
+  margin-top: 4px;
+  @apply text-2xl;
+  
+}
+
+.newPlaceFormText {
+  @apply text-green-400;
+}
+
+.newPlaceFormInput {
+  background-color: rgb(59,59,59);
+  color: white;
+}
+
+.newPlaceFormBtn {
+@apply border;
+@apply bg-transparent;
+@apply rounded-2xl;
+@apply p-5;
+@apply text-2xl;
+display: inline-flex;
+@apply justify-center;
+@apply gap-2;
+
+}
+
+.newPlaceFormGrid {
+  @apply mt-2;
+  display: grid;
+  @apply grid-cols-3;
+  @apply md:grid-cols-4;
+  @apply lg:grid-cols-6;
+}
+
+.newPlaceFormAddLink {
+  display: flex;
+}
+
+.newPlaceFormBtnLink {
+  @apply bg-softgreen;
+ @apply px-4;
+ @apply rounded-2xl;
+}
+
+.newPlaceFormPerks {
+  display: grid;
+  @apply grid-cols-2;
+  @apply md:grid-cols-3;
+  @apply lg:grid-cols-6;
+  @apply gap-2;
+}
+
+.newPlaceFormLabelPerks {
+  @apply border;
+  @apply py-1;
+  @apply px-4;
+  @apply rounded-2xl;
+  display: flex;
+  @apply gap-2;
+  @apply items-center;
+  @apply cursor-pointer;
+}
+
+textarea {
+  width: 100%;
+  color: white;
+ @apply rounded-xl;
+ min-height: 120px;
+ background-color: rgb(54, 59, 61);
+ padding: 3px;
+}
+
+body {
+  max-width: 1440px;
+  margin: auto;
+}
