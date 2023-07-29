@@ -1,37 +1,4 @@
-import { Link } from "react-router-dom"
 
-export default function Header() {
-    return (
-        <>
-        <header className="flex flex-row justify-between max-h-20">
-            <img className="" src="/public/smallimg.svg" alt="Hotel Stay Logo" />
-            <div className="flex max-h-12 gap-2 border border-green-400 rounded-full py-2 px-4 shadow-sm shadow-green-400">
-                <div className="text-white">Anywhere</div>
-                <div className="border-l border-green-400"></div>
-                <div className="text-white">Any week</div>
-                <div className="border-l border-green-400"></div>
-                <div className="text-white">Add guests</div>
-                <button className="bg-primary text-white p-1 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-                </svg>
-                </button>
-            </div>
-            <Link to={'/login'} className="flex max-h-12 items-center gap-2 border border-green-400 rounded-full py-2 px-4">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-6 h-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-                <div className="bg-primary text-white rounded-full border border-green-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                    </svg>
-
-                </div>
-            </Link>
-           
-        </header>
-        <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
-        </>
-    )
 import { useContext } from "react"
 import { Link } from "react-router-dom"
 import { UserContext } from "./UserContext";
@@ -40,40 +7,42 @@ export default function Header() {
     const {user} = useContext(UserContext);
     return (
         <>
-        <header className="flex flex-row justify-between max-h-20 mainHeader">
+        <header className="flex flex-row justify-between max-h-20 mainHeader font-arima">
             <Link to={'/'}>
-            <img className="" src="/public/smallimg.svg" alt="Hotel Stay Logo" /> 
+            <img className="" src="/public/logo3.png" alt="Hotel Stay Logo" /> 
             </Link>
-            <div className="flex max-h-12 gap-2 border border-green-400 rounded-full py-2 px-4 shadow-sm shadow-green-400">
+            <div className="flex max-h-12 gap-2 border border-weirdblue rounded-full py-2 px-4 shadow-sm shadow-weirdblue">
                 <div className="text-white">Anywhere</div>
-                <div className="border-l border-green-400"></div>
+                <div className="border-l border-weirdblue"></div>
                 <div className="text-white">Any week</div>
-                <div className="border-l border-green-400"></div>
+                <div className="border-l border-weirdblue"></div>
                 <div className="text-white">Add guests</div>
-                <button className="bg-primary text-white p-1 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                <button className="bg-weirdblue text-white p-1 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                 </svg>
                 </button>
             </div>
-            <Link to={user?'/account':'/login'} className="flex max-h-12 items-center gap-2 border border-green-400 rounded-full py-2 px-4">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-6 h-6">
+            <Link to={user?'/account':'/login'} className="flex max-h-12 items-center gap-2 border border-weirdblue rounded-full py-2 px-4 shadow-sm shadow-weirdblue">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#66FCF1" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
-                <div className="bg-primary text-white rounded-full border border-green-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                    </svg>
+                <div className="">
+                <svg height="30" width="30" fill="#134743">
+  <path d="M 16 0.7 C 7.56 0.7 0.7 7.56 0.7 16 S 7.56 31.3 16 31.3 S 31.3 24.44 31.3 16 S 24.44 0.7 16 0.7 Z m 0 28 c -4.02 0 -7.6 -1.88 -9.93 -4.81 a 12.43 12.43 0 0 1 6.45 -4.4 A 6.5 6.5 0 0 1 9.5 14 a 6.5 6.5 0 0 1 13 0 a 6.51 6.51 0 0 1 -3.02 5.5 a 12.42 12.42 0 0 1 6.45 4.4 A 12.67 12.67 0 0 1 16 28.7 Z" />
+</svg>
 
                 </div>
                 {!!user && (
-                    <div className="text-white">
+                    <div className="ml-1 text-white">
                         {user.name}
                     </div>
                 )}
             </Link>
            
         </header>
-        <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+        <div className="transition-container flex justify-center">
+  <div className="transition-line bg-weirdblue"></div>
+</div>
         </>
     )
 }
