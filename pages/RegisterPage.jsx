@@ -31,7 +31,7 @@ export default function RegisterPage() {
 
     return (
         <div style={containerStyle}>
-            <div className="">
+            <div className="font-jakarta">
                 <h1 className="text-4xl text-center mb-4">Register</h1>
                 <form className="max-w-md mx-auto" onSubmit={registerUser}>
                     <input type="text" placeholder="name" autoComplete="name"
